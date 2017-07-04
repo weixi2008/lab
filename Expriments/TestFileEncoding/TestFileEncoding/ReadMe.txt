@@ -1,69 +1,34 @@
-================================================================================
-    MICROSOFT »ù´¡Àà¿â: TestFileEncoding ÏîÄ¿¸ÅÊö
+ï»¿================================================================================
+    MICROSOFT åŸºç¡€ç±»åº“: TestFileEncoding é¡¹ç›®æ¦‚è¿°
 ===============================================================================
 
-Ó¦ÓÃ³ÌÐòÏòµ¼ÒÑÎªÄú´´½¨´Ë TestFileEncoding Ó¦ÓÃ³ÌÐò¡£´ËÓ¦ÓÃ³ÌÐò²»½öÑÝÊ¾Ê¹ÓÃ Microsoft »ù´¡ÀàµÄ»ù±¾ÖªÊ¶£¬¶øÇÒ¿É×÷Îª±àÐ´Ó¦ÓÃ³ÌÐòµÄÆðµã¡£
+æ­¤å·¥ç¨‹ç”¨å‡ ä¸ªç¼–ç ä¸åŒçš„æ–‡ä»¶ï¼Œæµ‹è¯•äº†VisualStudioå¯¹äºŽä¸åŒç¼–ç çš„æ–‡ä»¶çš„æ”¯æŒæƒ…å†µã€‚
 
-´ËÎÄ¼þ°üº¬×é³É TestFileEncoding Ó¦ÓÃ³ÌÐòµÄ¸÷¸öÎÄ¼þµÄÄÚÈÝÕªÒª¡£
+å› ä¸ºgitåŠgithubçš„diffä¸æ”¯æŒUTF16ç¼–ç çš„æ–‡ä»¶ï¼Œè€ŒFNPçš„æºä»£ç çš„ç¼–ç ä¸ºUTF16çš„ï¼Œå› æ­¤åˆ›å»ºä¸€ä¸ªå·¥ç¨‹æµ‹è¯•å¤šç¼–ç ã€‚
 
-TestFileEncoding.vcproj
-    ÕâÊÇÊ¹ÓÃÓ¦ÓÃ³ÌÐòÏòµ¼Éú³ÉµÄ VC++ ÏîÄ¿µÄÖ÷ÏîÄ¿ÎÄ¼þ¡£
-    Ëü°üº¬ÓÐ¹ØÉú³ÉÎÄ¼þµÄ Visual C++ °æ±¾µÄÐÅÏ¢£¬ÒÔ¼°ÓÐ¹ØÊ¹ÓÃÓ¦ÓÃ³ÌÐòÏòµ¼Ñ¡ÔñµÄÆ½Ì¨¡¢ÅäÖÃºÍÏîÄ¿¹¦ÄÜµÄÐÅÏ¢¡£
+å¤´æ–‡ä»¶
+UTF16BOM.h	å¸¦BOMå¤´çš„UTF16æ–‡ä»¶ï¼Œcodepageä¸º1200
+UTF8BOM.h	å¸¦BOMå¤´çš„UTF8æ–‡ä»¶ï¼Œ codepageä¸º65001
+UTF8.h		ä¸å¸¦BOMå¤´çš„UTF16æ–‡ä»¶ï¼Œ codepageä¸º65000
+æ¯ä¸ªæ–‡ä»¶ä¸­éƒ½æ˜¯ä¸­æ—¥æ–‡æ··åˆã€‚
 
-TestFileEncoding.h
-    ÕâÊÇÓ¦ÓÃ³ÌÐòµÄÖ÷ÒªÍ·ÎÄ¼þ¡£Ëü°üÀ¨ÆäËûÏîÄ¿ÌØ¶¨µÄÍ·ÎÄ¼þ(°üÀ¨ Resource.h)£¬²¢ÉùÃ÷ CTestFileEncodingApp Ó¦ÓÃ³ÌÐòÀà¡£
+1. UTF8.h, VCç¼–è¯‘å¤±è´¥ã€‚å› ä¸ºç¼–è¯‘å™¨å°†æ­¤æ–‡ä»¶çš„ä»£ç é¡µè¯†åˆ«ä¸º936ï¼Œåº”è¯¥æ˜¯ç¼–è¯‘å™¨çš„é—®é¢˜ã€‚
+2. UTF8BOM.h, VCç¼–è¯‘æˆåŠŸã€‚å¹¶ä¸”gitåŠgithubå¯ä»¥æ¯”è¾ƒå·®å¼‚ã€‚
+3. UTF16BOM.h, VCç¼–è¯‘æˆåŠŸã€‚ä½†gitè¯†åˆ«ä¸ºäºŒè¿›åˆ¶æ–‡ä»¶ï¼Œæ— æ³•æ¯”è¾ƒå·®å¼‚ã€‚
+4. èµ„æºæ–‡ä»¶rcï¼Œåªèƒ½ç”¨ANSIç¼–ç æˆ–UTF16ï¼ˆ1200ï¼‰ç¼–ç ã€‚å› ä¸ºrcç¼–è¯‘å™¨ä»…æ”¯æŒä¸Šè¿°ä¸¤ç§ï¼Œä¸æ”¯æŒUTF8
 
-TestFileEncoding.cpp
-    ÕâÊÇ°üº¬Ó¦ÓÃ³ÌÐòÀà CTestFileEncodingApp µÄÖ÷ÒªÓ¦ÓÃ³ÌÐòÔ´ÎÄ¼þ¡£
-
-TestFileEncoding.rc
-    ÕâÊÇ³ÌÐòÊ¹ÓÃµÄËùÓÐ Microsoft Windows ×ÊÔ´µÄÁÐ±í¡£Ëü°üÀ¨ RES ×ÓÄ¿Â¼ÖÐ´æ´¢µÄÍ¼±ê¡¢Î»Í¼ºÍ¹â±ê¡£´ËÎÄ¼þ¿ÉÒÔÖ±½ÓÔÚ Microsoft Visual C++ ÖÐ½øÐÐ±à¼­¡£ÏîÄ¿×ÊÔ´Î»ÓÚ 2052 ÖÐ¡£
-
-res\TestFileEncoding.ico
-    ÕâÊÇÓÃ×÷Ó¦ÓÃ³ÌÐòÍ¼±êµÄÍ¼±êÎÄ¼þ¡£´ËÍ¼±ê°üÀ¨ÔÚÖ÷Òª×ÊÔ´ÎÄ¼þ TestFileEncoding.rc ÖÐ¡£
-
-res\TestFileEncoding.rc2
-    ´ËÎÄ¼þ°üº¬²»ÊÇÓÉ Microsoft Visual C++ ±à¼­µÄ×ÊÔ´¡£ÄúÓ¦¸Ã½«²»¿ÉÓÉ×ÊÔ´±à¼­Æ÷±à¼­µÄËùÓÐ×ÊÔ´·ÅÔÚ´ËÎÄ¼þÖÐ¡£
+ç»“è®ºï¼š
+æºæ–‡ä»¶.h,.cppç­‰ï¼Œä½¿ç”¨å¸¦BOMå¤´çš„UTF8æ–‡ä»¶ï¼Œ codepageä¸º65001ã€‚
+rcæ–‡ä»¶ï¼Œä½¿ç”¨å¸¦BOMå¤´çš„UTF16æ–‡ä»¶ï¼Œcodepageä¸º1200ã€‚
 
 
-/////////////////////////////////////////////////////////////////////////////
+å‚è€ƒèµ„æ–™ï¼š
+BOMå¤´
+Byte-order mark Description 
+EF BB BF UTF-8 
+FF FE UTF-16 aka UCS-2, little endian 
+FE FF UTF-16 aka UCS-2, big endian 
+00 00 FF FE UTF-32 aka UCS-4, little endian. 
+00 00 FE FF UTF-32 aka UCS-4, big-endian.
 
-Ó¦ÓÃ³ÌÐòÏòµ¼´´½¨Ò»¸ö¶Ô»°¿òÀà:
-
-TestFileEncodingDlg.h£¬TestFileEncodingDlg.cpp - ¶Ô»°¿ò
-    ÕâÐ©ÎÄ¼þ°üº¬ CTestFileEncodingDlg Àà¡£¸ÃÀà¶¨ÒåÓ¦ÓÃ³ÌÐòÖ÷¶Ô»°¿òµÄÐÐÎª¡£¸Ã¶Ô»°¿òµÄÄ£°åÎ»ÓÚ TestFileEncoding.rc ÖÐ£¬¸ÃÎÄ¼þ¿ÉÒÔÔÚ Microsoft Visual C++ ÖÐ½øÐÐ±à¼­¡£
-
-
-/////////////////////////////////////////////////////////////////////////////
-
-ÆäËû¹¦ÄÜ:
-
-ActiveX ¿Ø¼þ
-    Ó¦ÓÃ³ÌÐò°üÀ¨¶ÔÊ¹ÓÃ ActiveX ¿Ø¼þµÄÖ§³Ö¡£
-
-´òÓ¡¼°´òÓ¡Ô¤ÀÀÖ§³Ö
-    Ó¦ÓÃ³ÌÐòÏòµ¼ÒÑÍ¨¹ý´Ó MFC ¿âµ÷ÓÃ CView ÀàÖÐµÄ³ÉÔ±º¯Êý£¬Éú³ÉÁËÓÃÓÚ´¦Àí´òÓ¡¡¢´òÓ¡ÉèÖÃºÍ´òÓ¡Ô¤ÀÀÃüÁîµÄ´úÂë¡£
-
-/////////////////////////////////////////////////////////////////////////////
-
-ÆäËû±ê×¼ÎÄ¼þ:
-
-StdAfx.h, StdAfx.cpp
-    ÕâÐ©ÎÄ¼þÓÃÓÚÉú³ÉÃûÎª TestFileEncoding.pch µÄÔ¤±àÒëÍ·(PCH)ÎÄ¼þºÍÃûÎª StdAfx.obj µÄÔ¤±àÒëÀàÐÍÎÄ¼þ¡£
-
-Resource.h
-    ÕâÊÇ±ê×¼Í·ÎÄ¼þ£¬Ëü¶¨ÒåÐÂ×ÊÔ´ ID¡£
-    Microsoft Visual C++ ½«¶ÁÈ¡²¢¸üÐÂ´ËÎÄ¼þ¡£
-
-TestFileEncoding.manifest
-	Windows XP Ê¹ÓÃÓ¦ÓÃ³ÌÐòÇåµ¥ÎÄ¼þÃèÊöÓ¦ÓÃ³ÌÐò	¶ÔÌØ¶¨°æ±¾²¢ÐÐ³ÌÐò¼¯µÄÒÀÀµÐÔ¡£¼ÓÔØ³ÌÐòÊ¹ÓÃ´Ë	ÐÅÏ¢´Ó³ÌÐò¼¯»º´æ¼ÓÔØÏàÓ¦³ÌÐò¼¯»ò	´ÓÓ¦ÓÃ³ÌÐò¼ÓÔØË½ÓÐÐÅÏ¢¡£Ó¦ÓÃ³ÌÐòÇåµ¥¿ÉÄÜ×÷Îª	ÓëÓ¦ÓÃ³ÌÐò¿ÉÖ´ÐÐÎÄ¼þ°²×°ÔÚÍ¬Ò»ÎÄ¼þ¼ÐÖÐµÄÍâ²¿ .manifest ÎÄ¼þ°üÀ¨ÔÚÄÚÒÔ±ãÖØÐÂ·¢²¼£¬	Ò²¿ÉÄÜÒÔ×ÊÔ´µÄÐÎÊ½°üÀ¨ÔÚ¸Ã¿ÉÖ´ÐÐÎÄ¼þÖÐ¡£
-/////////////////////////////////////////////////////////////////////////////
-
-ÆäËû×¢ÊÍ:
-
-Ó¦ÓÃ³ÌÐòÏòµ¼Ê¹ÓÃ¡°TODO:¡±Ö¸Ê¾Ó¦Ìí¼Ó»ò×Ô¶¨ÒåµÄÔ´´úÂë²¿·Ö¡£
-
-Èç¹ûÓ¦ÓÃ³ÌÐòÔÚ¹²Ïí DLL ÖÐÊ¹ÓÃ MFC,Ôò½«ÐèÒªÖØÐÂ·¢²¼ MFC DLL¡£Èç¹ûÓ¦ÓÃ³ÌÐòËùÓÃÓë²Ù×÷ÏµÍ³µÄÇøÓòÉèÖÃ²»Í¬£¬ÔòÒ²½«±ØÐëÖØÐÂ·¢²¼¶ÔÓ¦µÄ±¾µØ»¯×ÊÔ´ MFC90XXX.DLL¡£
-ÓÐ¹ØÕâÁ½¸öÖ÷ÌâµÄÏêÏ¸ÐÅÏ¢£¬Çë²ÎÔÄ MSDN ÎÄµµÖÐÓÐ¹ØÖØÐÂ·¢²¼ Visual C++ Ó¦ÓÃ³ÌÐòµÄ²¿·Ö¡£
-
-/////////////////////////////////////////////////////////////////////////////
+http://www.cnblogs.com/DDark/archive/2011/11/28/2266085.html
