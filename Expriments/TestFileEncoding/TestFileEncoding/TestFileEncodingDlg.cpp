@@ -108,6 +108,7 @@ BOOL CTestFileEncodingDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 设置小图标
 
 	// TODO: 在此添加额外的初始化代码
+	//ありがど。版本三
 	m_strUTF16BOM = g_strUTF16BOM;
 	m_strUTF8BOM = g_strUTF8BOM;
 	//m_strUTF8 = g_strUTF8;

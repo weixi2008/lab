@@ -30,6 +30,7 @@ protected:
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
 public:
+	//ありがど。版本三
 	CString m_strUTF16BOM;
 	CString m_strUTF8BOM;
 	CString m_strUTF8;
