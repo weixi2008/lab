@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnicodeTestConsole", "UnicodeTestConsole\UnicodeTestConsole.vcproj", "{D61EFF50-F9F6-4EF0-9AAD-448EB0BAF20B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SynergyReturnFixer", "SynergyReturnFixer\SynergyReturnFixer.vcproj", "{78B07E7E-1260-4B0C-B5FB-C0F0A5A71E1D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EncodeUTF8", "EncodeUTF8\EncodeUTF8.vcproj", "{1BDF0E49-A0C4-4BA0-B192-0E40407144A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D61EFF50-F9F6-4EF0-9AAD-448EB0BAF20B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D61EFF50-F9F6-4EF0-9AAD-448EB0BAF20B}.Debug|Win32.Build.0 = Debug|Win32
+		{D61EFF50-F9F6-4EF0-9AAD-448EB0BAF20B}.Release|Win32.ActiveCfg = Release|Win32
+		{D61EFF50-F9F6-4EF0-9AAD-448EB0BAF20B}.Release|Win32.Build.0 = Release|Win32
+		{78B07E7E-1260-4B0C-B5FB-C0F0A5A71E1D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{78B07E7E-1260-4B0C-B5FB-C0F0A5A71E1D}.Debug|Win32.Build.0 = Debug|Win32
+		{78B07E7E-1260-4B0C-B5FB-C0F0A5A71E1D}.Release|Win32.ActiveCfg = Release|Win32
+		{78B07E7E-1260-4B0C-B5FB-C0F0A5A71E1D}.Release|Win32.Build.0 = Release|Win32
+		{1BDF0E49-A0C4-4BA0-B192-0E40407144A0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1BDF0E49-A0C4-4BA0-B192-0E40407144A0}.Debug|Win32.Build.0 = Debug|Win32
+		{1BDF0E49-A0C4-4BA0-B192-0E40407144A0}.Release|Win32.ActiveCfg = Release|Win32
+		{1BDF0E49-A0C4-4BA0-B192-0E40407144A0}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
