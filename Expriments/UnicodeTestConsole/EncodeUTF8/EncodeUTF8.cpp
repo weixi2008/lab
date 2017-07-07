@@ -139,6 +139,7 @@ void RecursiveEncode2UTF8(const CString &strPath)
 				if(Filter(strFile) && !ExcludeFile(strFile))
 				{
 					bool bSuccess = false;
+					//UTF16的codepage为1200, UTF8的codepage为65001
 					if(CStdioFileEx::IsFileUnicode(strFile))
 					{
 						bSuccess = TransFileEncoding(strFile, 1200, CP_UTF8);
@@ -170,7 +171,7 @@ void RecursiveEncode2UTF8(const CString &strPath)
 }
 
 
-
+//此工程仅为一个测试工程，快速实现及转换。慎用。
 int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 {
 	int nRetCode = 0;
