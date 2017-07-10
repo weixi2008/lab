@@ -54,6 +54,12 @@ bool TransFileEncoding(const CString& strFile, UINT fromEncoding, UINT toEncodin
 				fileOut.WriteString(strLine + sNEWLINE);
 			}
 
+			//如果输入为空的cpp文件，插入一个回车符。
+			if(fileOut.GetPosition() == 0)
+			{
+				fileOut.WriteString(sNEWLINE);
+			}
+
 			fileOut.Close();
 		}
 		else
