@@ -34,6 +34,22 @@ def list_ext_files(dir_path, ext):
 # files = list_ext_files("/Users/weixi/mygit", ".ipynb")
 # for Windows
 files = list_ext_files('D:/MyGit/lab/DevTools', '.ipynb')
+
+# 对比目录下文件.md与同名的.ipynb的修改时间，已经生成md的不再生成，提高效率
+temp_files = []
+for file in files:
+    root, ext = os.path.splitext(file)
+    abs_path_name_md = root + '.md'
+    abs_path_name_ipynb = file
+    if(os.path.exists(abs_path_name_md)):
+        timestamp_md = os.path.getmtime(abs_path_name_md)
+        timestamp_ipynb = os.path.getmtime(abs_path_name_ipynb)
+        if(timestamp_ipynb > timestamp_md):
+            temp_files.append(abs_path_name_ipynb)
+    else:
+        temp_files.append(abs_path_name_ipynb)
+
+files = temp_files
 ```
 
 
