@@ -34,6 +34,7 @@ def svm_loss_naive(W, X, y, reg):
       margin = scores[j] - correct_class_score + 1 # note delta = 1
       if margin > 0:
         loss += margin
+        # 此处使用微分分析法，计算梯度。
         dW[:, j] += X[i].T
         dW[:, y[i]] += -X[i].T
 
@@ -74,7 +75,7 @@ def svm_loss_vectorized(W, X, y, reg):
   #############################################################################
   # X:N*D, W:D*C,
   N = X.shape[0]
-  # 注意：与讲义中的dot是反的
+# 注意：与讲义中的dot是反的
   scores = X.dot(W) # N*C
   correct_class_scores = scores[range(N), y].reshape(N, 1)
   margins = np.maximum(0, scores - correct_class_scores + 1.0) # delta = 1.0
