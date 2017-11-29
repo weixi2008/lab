@@ -2,6 +2,7 @@ import numpy as np
 from cs231n.classifiers.linear_svm import *
 from cs231n.classifiers.softmax import *
 
+# 线性分类器，训练结果保持在成员W中。 抽象了svm与softmax的接口
 class LinearClassifier(object):
 
   def __init__(self):
@@ -26,6 +27,7 @@ class LinearClassifier(object):
     Outputs:
     A list containing the value of the loss function at each training iteration.
     """
+    # 惰性初始化W，根据外部传入计算的分类数量
     num_train, dim = X.shape
     num_classes = np.max(y) + 1 # assume y takes values 0...K-1 where K is number of classes
     if self.W is None:
@@ -65,6 +67,7 @@ class LinearClassifier(object):
       # TODO:                                                                 #
       # Update the weights using the gradient and the learning rate.          #
       #########################################################################
+      # 利用梯度来更新Weight，注意是梯度下降的方向
       self.W += -learning_rate * grad
       #########################################################################
       #                       END OF YOUR CODE                                #

@@ -34,7 +34,9 @@ def softmax_loss_naive(W, X, y, reg):
   loss = 0.0
   for i in range(num_train):
       scores = X[i].dot(W)
-      scores -= np.max(scores) #按照课件提示，将结果平移，使得最大值为0
+      # 按照课件提示，将结果平移，使得最大值为0
+      scores -= np.max(scores)
+      # 计算损失有两种等效的方法。 方法1 -log(np.exp(scores[fyi]) / sum(np.exp(scores))). 方法2 如下
       loss_i = -scores[y[i]] + np.log(sum(np.exp(scores)))
       loss += loss_i
       # 此处使用微分分析法，计算梯度。

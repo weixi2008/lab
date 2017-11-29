@@ -1,2 +1,7 @@
 # lab
-jupyter notebook for my learning route
+私人实验室
+
+## 内容
+此工程中杂七杂八，都是我的一些实验品。待实验成熟后，会建立相关的工程目录。
+
+因此访问者无需关心。

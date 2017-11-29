@@ -100,7 +100,7 @@ def eval_numerical_gradient_net(net, inputs, output, h=1e-5):
   return eval_numerical_gradient_blobs(lambda *args: net.forward(),
               inputs, output, h=h)
 
-
+# 随机检验数值梯度与分析梯度的差别。 分析梯度这么精确，想不明白
 def grad_check_sparse(f, x, analytic_grad, num_checks=10, h=1e-5):
   """
   sample a few random elements and only return numerical
@@ -109,7 +109,9 @@ def grad_check_sparse(f, x, analytic_grad, num_checks=10, h=1e-5):
 
   for i in range(num_checks):
     ix = tuple([randrange(m) for m in x.shape])
+    print('ix:', ix)
 
+    # 数值梯度利用 grad = [f(x+h) - f(x-h)] / （2*h)
     oldval = x[ix]
     x[ix] = oldval + h # increment by h
     fxph = f(x) # evaluate f(x + h)

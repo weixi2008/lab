@@ -1,5 +1,5 @@
 import numpy as np
-
+# 分类器的核心接口，一个是训练接口train，一个是预测接口predict
 class KNearestNeighbor(object):
   """ a kNN classifier with L2 distance """
 
@@ -72,8 +72,9 @@ class KNearestNeighbor(object):
         # not use a loop over dimension.                                    #
         #####################################################################
         # 下面两种方法等价
-        dists[i,j] = np.sqrt(np.sum(np.square(X[i] - self.X_train[j])))
-        # dists[i,j] = np.sqrt(np.sum(np.square(X[i, :] - self.X_train[j, :])))
+        # 欧氏距离的扩展，sqrt((x1-x2)^2+(y1-y2)^2)。
+        # dists[i,j] = np.sqrt(np.sum(np.square(X[i] - self.X_train[j])))
+        dists[i,j] = np.sqrt(np.sum(np.square(X[i, :] - self.X_train[j, :])))
         #####################################################################
         #                       END OF YOUR CODE                            #
         #####################################################################

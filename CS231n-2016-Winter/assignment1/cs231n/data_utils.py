@@ -3,27 +3,40 @@ import numpy as np
 import os
 from scipy.misc import imread
 
+# 文件格式说明参见 http://www.cs.toronto.edu/~kriz/cifar.html
 def load_CIFAR_batch(filename):
   """ load single batch of cifar """
   with open(filename, 'rb') as f:
-    datadict = pickle.load(f, encoding='latin1') #Fixed. In python3, must specify encoding
+    # 原始代码 datadict = pickle.load(f)
+    # Fixed. In python3, must specify encoding
+    # 下面采用stackoverflow的解决方法，https://stackoverflow.com/questions/28218466/unpickling-a-python-2-object-with-python-3
+    # 也可以采用dataset网站提供的方法。 http://www.cs.toronto.edu/~kriz/cifar.html 但如果encoding是bytes的话，datadict的key也必须是b,参见下述代码
+    #     datadict = pickle.load(f, encoding='bytes')
+    #     X = datadict[b'data']    
+    datadict = pickle.load(f, encoding='latin1')
     X = datadict['data']
     Y = datadict['labels']
+    # 根据网址，原始数据格式是10000x3072(32*32*3), uint8
+    # 目标是将3个通道合并到每个像素。
     X = X.reshape(10000, 3, 32, 32).transpose(0,2,3,1).astype("float")
     Y = np.array(Y)
     return X, Y
 
+# 加载训练集与测试集
 def load_CIFAR10(ROOT):
   """ load all of cifar """
   xs = []
   ys = []
+  # 1到5为训练集
   for b in range(1,6):
     f = os.path.join(ROOT, 'data_batch_%d' % (b, ))
     X, Y = load_CIFAR_batch(f)
     xs.append(X)
     ys.append(Y)
+  # 将训练集合并， axis默认参数为0
   Xtr = np.concatenate(xs)
   Ytr = np.concatenate(ys)
+  # 【问题】在此处释放 X，Y 这段代码有意义吗？
   del X, Y
   Xte, Yte = load_CIFAR_batch(os.path.join(ROOT, 'test_batch'))
   return Xtr, Ytr, Xte, Yte
